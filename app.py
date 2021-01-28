@@ -18,6 +18,11 @@ app.config['SECRET_KEY'] = "SECRET!"
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 debug = DebugToolbarExtension(app)
 
+@app.route("/")
+def index_page():
+    """Show cupcake list"""
+    return render_template("list.html")
+
 @app.route("/api/cupcakes")
 def get_cupcakes():
     """List of cupcakes"""
